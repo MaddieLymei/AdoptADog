@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <img src="Images/logo.jpg" alt="Logo" width="250" height="250">
+  <img src="Images/logo.png" alt="Logo" width="250" height="250">
 
 <h3 align="center">Adopt A Dog</h3>
 
