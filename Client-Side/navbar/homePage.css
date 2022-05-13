@@ -1,0 +1,48 @@
+Body{
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+}
+
+img{
+    margin-top: 1%;
+    width: 65%;
+    flex: auto;
+    margin-left: 15%;
+    
+}
+
+article{
+    margin-left: 19%;
+    width: 40%;
+    margin-top: -43%;
+    color: white;
+}
+
+h1{
+    color: #FFE66D;
+    font-size: 450%;
+    flex: auto;
+}
+
+h2{
+    margin-top: -6%;
+    font-size: 250%;
+}
+
+p{
+    margin-top: -3%;
+    font-size: x-large;
+}
+
+button{
+    font-size: x-large;
+    font-weight: bold;
+    width: 55%;
+    padding: 1%;
+    background-color: #FFE66D;
+    border: none;
+    border-radius: 15px;
+}
+
+button:hover{
+    background-color: #e4c00f;
+}
