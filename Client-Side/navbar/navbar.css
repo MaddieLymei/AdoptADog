@@ -18,7 +18,9 @@
 }
 
 .websiteIcon {
-    height: 30px;
+    margin-top: -20mm;
+    margin-left: -5mm;
+    max-width: 10mm;
 }
 
 .navbarList {
