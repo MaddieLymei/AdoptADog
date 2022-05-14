@@ -1,14 +1,3 @@
-button {
-  font-size: 24px;
-  font-weight: bold;
-  width: 215px;
-  height: 46px;
-  padding: auto;
-  background-color: #ffe66d;
-  border: none;
-  border-radius: 7px;
-}
-
 h1 {
   display: block;
   color: #056d68;
@@ -16,6 +5,24 @@ h1 {
   margin-bottom: 10px;
   border-bottom: 1px solid #cccccc;
   font-size: 26px;
+}
+
+span {
+  opacity: 69%;
+}
+
+p.description {
+  font-size: 18px;
+  opacity: 69%;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cccccc;
+}
+
+/* Characteristics section */
+
+section.characteristicsSection {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #cccccc;
 }
 
 ul.characteristics {
@@ -28,20 +35,53 @@ ul.characteristics {
 button.moreDetails {
   color: #056d68;
   background: none;
-  font-size: 16px;
+  font-size: 15px;
   margin: 8px 16px 0 0;
   padding: 0;
   width: auto;
   height: auto;
-  font-weight: 400;
-  text-decoration: underline;
+  font-weight: 500;
+  text-decoration: underline; /*Could change this to a hover effect*/
+  border: none;
 }
 
-span {
-  opacity: 69%;
+/* Adopt me and enquiries section */
+section.adoptAndEnquiries {
+  display: flex;
+  justify-content: space-between;
 }
 
-p {
-  font-size: 18;
-  opacity: 69%;
+/* Adopt button */
+button.adoptButton {
+  font-size: 24px;
+  font-weight: bold;
+  width: 215px;
+  height: 46px;
+  background-color: #ffe66d;
+  border: none;
+  border-radius: 7px;
+  display: inline-block;
+  margin-left: 40px;
+}
+
+/* Enquiries List */
+ul.enquiryDetails {
+  display: inline-block;
+  margin: 0;
+}
+
+.enquiryDetails li {
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 300;
+  opacity: 70%;
+  margin: 0;
+}
+
+.enquiryDetails header h2 {
+  padding: 0;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
 }
