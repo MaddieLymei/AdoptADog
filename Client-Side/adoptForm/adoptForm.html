@@ -14,7 +14,7 @@
     <main class="mainBody">
         <form action="" class="adoptionForm">
             <header>Take the first step to take your<br>fluffy friend home!</header>
-            <a class="sliderLink" href="">What is required of me?</a><br><br>
+            <button class="sliderLink" >What is required of me?</button><br><br>
             <label for="inputFirstName">FIRST NAME *</label><br>
             <input type="text" name="inputFirstName" placeholder="Enter your first name"><br><br>
             <label for="inputLastName">LAST NAME *</label><br>
@@ -26,25 +26,24 @@
             <label for="inputMessage">MESSAGE</label><br>
             <textarea name="inputMessage" placeholder="Enter your message"></textarea><br><br>
             <button class="backButton" onclick="history.back()">Back</button>
-            <button class="submitButton">Please contact me</button>
+            <button class="submitButton">Contact me</button>
         </form>
 
-        <aside class="modalContainer">
-            <article class="modal" id="successModal">
-                <header>Message sent!</header><br>
+        <dialog class="modalContainer" id="successModal">
+            <article class="modal">
+                <header>Message sent!</header>
                 <p>The shelter will be in touch.<br>Thank you for caring!</p>
-                <section class="centerButton">
-                    <button class="successButton">Go home</button>
-                </section>
+                <button class="okButton">Go home</button>
             </article>
-            <article class="modal" id="failureModal">
-                <header>Oops!</header><br>
+        </dialog>
+
+        <dialog class="modalContainer" id="failureModal">
+            <article class="modal">
+                <header>Oops!</header>
                 <p>Your message couldn't be sent.<br>Please try emailing the shelter personally.</p>
-                <section class="centerButton">
-                    <button class="successButton">Go home</button>
-                </section>
+                <button class="okButton">Go home</button>
             </article>
-        </aside>
+        </dialog>
 
     </main>
 
