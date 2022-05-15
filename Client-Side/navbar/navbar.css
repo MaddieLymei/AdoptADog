@@ -4,8 +4,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 50px;
-    
+    padding-left: 5%;
 }
 
 /*would reccomend making justify-content: space-between; (looks better). Just correct the padding then*/
@@ -79,8 +78,8 @@
     .navbarList .listItem {
         display: block;
         padding: 10px;
-        background-color: #D3D3D3;
-        border-top: 1px solid #FFF;
+        background-color: #FFF;
+        border: 1px solid #CCC;
     }
 
     .phoneMenu {
