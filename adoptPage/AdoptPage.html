@@ -9,19 +9,24 @@
 		<title>AdoptADog</title>
 	</head>
 	<body>
-		
+
 		<script type="text/javascript" src="navbar.js"></script>
 		<script>loadNavbar();</script>
+		<script type="text/javascript" src="AdoptPage.js"></script>
 
 		<main class="mainBody">
+
 			<form action="" class="adoptionPage">
+
 				<section class="rowCategories">
+
 				  <section class="columnCategories">
 					<label for="chooseSize">Size</label><br />
 					<select name="size" class="sizeDropdown">
 						<option value="" selected="selected">Select size</option>
 					</select>
 				  </section>
+
 				  <section class="columnCategories">
 					<label for="chooseBreed">Breed</label><br />
 					<select name="breed" class="breedDropdown">
@@ -29,68 +34,157 @@
 					</select>
 				  </section>
 				</section>
+
 				<section class="rowCards">
+
 				  <section class="columnCards">
 					<section class="card">
 					  <img src="Jimbo.jpg" alt="Jimbo" style="width:100%">
 					  <section class="dogInfo">
 						<h3 for="dogName">Jimbo</h3>
 						<p>Labrador, <br> 12 years old</p>
-						<button class="moreAboutDog">→ Find out more about me</button>
+
+						  <div class="section">
+						  <button type = "button" class ="moreAboutDog" onclick="toggle(this);">→ Find out more about me</button>
+							  <div class="collapsible-content">
+								 <ul>
+									 <li>
+										 Loves snacks.
+									 </li>
+									 <li>
+										 Loves to play fetch
+									 </li>
+								 </ul>
+							  </div>
+						  </div>
 					  </section>
 					</section>
 				  </section>
+
+
+
 				  <section class="columnCards">
 					<section class="card">
 					  <img src="Gaby.jpg" alt="Gaby" style="width:100%">
 					  <section class="dogInfo">
 						<h3 for="dogName">Gaby</h3>
 						<p>Labrador, <br> 12 years old</p>
-						<button class="moreAboutDog">→ Find out more about me</button>
+
+						  <div class="section">
+							  <button type = "button" class ="moreAboutDog" onclick="toggle(this);">→ Find out more about me</button>
+							  <div class="collapsible-content">
+								  <ul>
+									  <li>
+										  Loves snacks.
+									  </li>
+									  <li>
+										  Loves to play fetch
+									  </li>
+								  </ul>
+							  </div>
+						  </div>
+
 					  </section>
 					</section>
 				  </section>
+
 				  <section class="columnCards">
 					<section class="card">
 					  <img src="Max.jpg" alt="Max" style="width:100%">
 					  <section class="dogInfo">
 						<h3 for="dogName">Max</h3>
 						<p>Labrador, <br> 12 years old</p>
-						<button class="moreAboutDog">→ Find out more about me</button>
+						  <div class="section">
+							  <button type = "button" class ="moreAboutDog" onclick="toggle(this);">→ Find out more about me</button>
+							  <div class="collapsible-content">
+								  <ul>
+									  <li>
+										  Loves snacks.
+									  </li>
+									  <li>
+										  Loves to play fetch
+									  </li>
+								  </ul>
+							  </div>
+						  </div>
 					  </section>
 					</section>
-				  </section>			  
+				  </section>
+
+
 				  <section class="columnCards">
 					<section class="card">
 					  <img src="Jimbo.jpg" alt="Jimbo" style="width:100%">
 					  <section class="dogInfo">
 						<h3 for="dogName">Jimbo</h3>
 						<p>Labrador, <br> 12 years old</p>
-						<button class="moreAboutDog">→ Find out more about me</button>
+						  <div class="section">
+							  <button type = "button" class ="moreAboutDog" onclick="toggle(this);">→ Find out more about me</button>
+							  <div class="collapsible-content">
+								  <ul>
+									  <li>
+										  Loves snacks.
+									  </li>
+									  <li>
+										  Loves to play fetch
+									  </li>
+								  </ul>
+							  </div>
+						  </div>
 					  </section>
 					</section>
 				  </section>
+
 				  <section class="columnCards">
 					<section class="card">
 					  <img src="Gaby.jpg" alt="Gaby" style="width:100%">
 					  <section class="dogInfo">
 						<h3 for="dogName">Gaby</h3>
 						<p>Labrador, <br> 12 years old</p>
-						<button class="moreAboutDog">→ Find out more about me</button>
+						  <div class="section">
+							  <button type = "button" class ="moreAboutDog" onclick="toggle(this);">→ Find out more about me</button>
+							  <div class="collapsible-content">
+								  <ul>
+									  <li>
+										  Loves snacks.
+									  </li>
+									  <li>
+										  Loves to play fetch
+									  </li>
+								  </ul>
+							  </div>
+						  </div>
 					  </section>
 					</section>
 				  </section>
+
 				  <section class="columnCards">
 					<section class="card">
 					  <img src="Max.jpg" alt="Max" style="width:100%">
 					  <section class="dogInfo">
 						<h3 for="dogName">Max</h3>
 						<p>Labrador, <br> 12 years old</p>
-						<button class="moreAboutDog">→ Find out more about me</button>
+
+						  <div class="section">
+							  <button type = "button" class ="moreAboutDog" onclick="toggle(this);">→ Find out more about me</button>
+							  <div class="collapsible-content">
+								  <ul>
+									  <li>
+										  Loves snacks.
+									  </li>
+									  <li>
+										  Loves to play fetch
+									  </li>
+								  </ul>
+							  </div>
+						  </div>
+
 					  </section>
+
 					</section>
 				  </section>
 				</section>
+
 			</form>
 	   </main>
 	</body>

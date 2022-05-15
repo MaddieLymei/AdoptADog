@@ -95,9 +95,11 @@ section.card {
   border: none;
 }
 
-.moreAboutDog:hover {
+.active, .moreAboutDog:hover {
+  background-color: yellow;
   text-decoration: underline;
   cursor: pointer;
+
 }
 
 @media all and (max-width: 750px) {
@@ -120,6 +122,7 @@ section.card {
   padding: 10px;
 }
 
+
 @media screen and (max-width: 992px) {
   .columnCards {
     flex: 50%;
@@ -131,4 +134,15 @@ section.card {
   .rowCards {
     flex-direction: column;
   }
+}
+
+.section{
+  display: inline-block;
+  transition: .25s;
+  background-color: white;
+  width: auto;}
+
+.collapsible-content{
+  height: 0px;
+  overflow: hidden;
 }
