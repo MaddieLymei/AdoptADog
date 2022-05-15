@@ -36,7 +36,7 @@
 }
 
 .adoptionForm input {
-  width: 100%;
+  width: 99%;
   height: 30px;
   font-size: 15px;
   color: #5f5a5a;
@@ -44,7 +44,7 @@
 }
 
 .adoptionForm textarea {
-  width: 100%;
+  width: 99%;
   height: 100px;
   font-size: 15px;
   color: #5f5a5a;
