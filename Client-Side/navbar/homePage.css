@@ -1,5 +1,7 @@
 Body{
     font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+    background-color: white;
+
 }
 
 img{
@@ -33,6 +35,7 @@ p{
     font-size: x-large;
 }
 
+
 button{
     font-size: x-large;
     font-weight: bold;
@@ -47,6 +50,11 @@ button:hover{
     background-color: #e4c00f;
 }
 /*AdoptPage*/
+.cards{
+    display: flex;
+
+}
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -54,11 +62,14 @@ button:hover{
     height: 550px;
     margin-left: 200px;
     margin-top: 200px;
+    flex: 33.33%;
+    padding: 10px;
+    background-position: 300px -300px;
 }
 
 .dogImage{
     width: 100%;
-    height: 400px;
+    height: 350px;
     margin-left: 0px;
     margin-top: 0px;
 
@@ -71,3 +82,51 @@ button:hover{
 .container {
     padding: 2px 16px;
 }
+
+.content {
+    margin-left: 3px;
+    font-size: 18px;
+}
+
+.dogName{
+    margin-left: 2px;
+    margin-right: 100px;
+    margin-top: 10px;
+    font-size: 24px;
+    color: #056D68;
+}
+
+.collapsible{
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.content2{
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: white;
+}
+
+.active, .collapsible:hover {
+    background-color: #FFE66D;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
