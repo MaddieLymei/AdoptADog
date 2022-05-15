@@ -16,8 +16,8 @@ h1 {
 }
 
 main img {
-  width: 45%;
-  height: 30%;
+  width: 50%;
+  height: 33%;
   margin-right: 30px;
 }
 
@@ -26,6 +26,7 @@ main img {
   opacity: 69%;
   padding-bottom: 20px;
   border-bottom: 1px solid #cccccc;
+  margin-bottom: 12px;
 }
 
 /* Characteristics section */
@@ -80,7 +81,7 @@ main img {
   background-color: #ffe66d;
   border: none;
   border-radius: 7px;
-  margin-left: 10px;
+  margin-top: 6px;
   padding: 5px 0 5px 0;
 }
 
@@ -88,6 +89,7 @@ main img {
 .enquiryDetailsList {
   margin: 0;
   text-align: right;
+  padding-left: 10px;
 }
 
 .enquiryDetailsList header h2 {
