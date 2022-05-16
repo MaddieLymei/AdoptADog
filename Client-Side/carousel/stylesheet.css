@@ -1,4 +1,5 @@
 .dog-image {
+  opacity: 0;
   width: 100%;
   height: auto;
   grid-column: 1 / 4;
@@ -15,22 +16,17 @@
 
 figure {
   display: grid;
+  padding: 0%;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
   width: 20%
-}
-
-.image-container {
-
-  grid-column: 1/4;
-  grid-row: 1/4;
 }
 
 .slider-left {
   position: relative;
   grid-column: 1;
   grid-row: 2;
-  background: none;
+  background-color: cccc;
   top: 50%;
   left: 10%;
   height: 15%;
@@ -49,10 +45,21 @@ figure {
 }
 
 .btn:active {
+  transition: scale 0.6s ease;
   transform: scale(1.1);
 }
 
 .btn:hover {
+  transition: background-color 0.6s ease;
+  background-color: #ffe66d;
+}
+
+.btn:not(:hover) {
+  transition: scale 0.6s ease;
+}
+
+.selected {
+  scale: 1.1;
   background-color: #ffe66d;
 }
 
@@ -69,6 +76,7 @@ figure {
   z-index: 100;
   border-radius: 100%;
   cursor: pointer;
+  transition: background-color 0.6s ease;
 }
 
 .selector-buttons-2 {
@@ -91,7 +99,7 @@ figure {
 
 @keyframes fade {
   from {
-    opacity: .4
+    opacity: 0
   }
 
   to {
