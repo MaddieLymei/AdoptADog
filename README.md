@@ -55,7 +55,7 @@ If you wish to test out the code and run application, please follow the instruct
 
 - [ ] [Amy Pegram](https://github.com/AmyPegramBBD)
 - [ ] [Andrew Bodenstein](https://github.com/AndrewBB-BBD)
-- [ ] [Anel Basson]()
+- [ ] [Anel Basson](https://github.com/anelbas)
 - [ ] [Madeleine Lambley](https://github.com/MaddieLymei)
 - [ ] [Natasha Kumalo](https://github.com/Nate-5)
 - [ ] [Nikita Smal](https://github.com/nikitasmal)
