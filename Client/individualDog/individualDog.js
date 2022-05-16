@@ -3,9 +3,8 @@ const extraDetails = document.querySelectorAll(".extraDetail");
 
 const dogImages = document.getElementsByClassName("dog-image");
 let currentImage = 1;
+slideshow = setInterval("changeSlides(1)", 10000);
 selectSlides(currentImage);
-
-setInterval("changeSlides(1)", 10000);
 
 let extraDetailsActive = false;
 const detailsButtonHandler = function (e) {
@@ -33,10 +32,11 @@ function selectSlides(n) {
 
 function changeSlides(n) {
   display(currentImage += n);
-  console.log("changed");
 }
 
 function display(n) {
+  clearInterval(slideshow);
+  slideshow = setInterval("changeSlides(1)", 10000);
   let i;
   const selectorButtons = document.getElementsByClassName("selector-buttons");
 
