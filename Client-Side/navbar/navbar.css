@@ -59,7 +59,6 @@
   display: flex;
   justify-content: flex-start;
 } */
-
 @media all and (max-width: 500px) {
   .navbar {
     flex-direction: column;
