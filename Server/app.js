@@ -22,7 +22,7 @@ app.get('/adopt', (req, res)=>{
     res.sendFile(path.join(__dirname, '/views/adoptForm.html'));
 })
 
-app.get('/dog', (req, res) => {
+app.get('/dog/:id', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/individualDog.html'));
 })
 
