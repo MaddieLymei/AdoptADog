@@ -10,6 +10,7 @@ function validateForm() {}
 
 function openSlideout(e) {
   e.preventDefault();
+  slideout.style.borderLeft = "1px solid #056d68";
   if (screen.width > 768) {
     slideout.style.width = "400px";
   } else if (screen.width <= 768 && screen.width > 500) {
@@ -20,6 +21,7 @@ function openSlideout(e) {
 function closeSlideout(e) {
   e.preventDefault();
   slideout.style.width = "0";
+  slideout.style.borderLeft = "none";
 }
 
 function openModal(e, success) {
