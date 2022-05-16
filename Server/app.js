@@ -15,12 +15,15 @@ app.use('/images', express.static(path.join(__dirname, 'public/images')))
 //Home page static file
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/homePage.html');
-    console.log('Here');
 })
 
+//Adoption form page
 app.get('/adopt', (req, res)=>{
-    console.log("Here");
     res.sendFile(path.join(__dirname, '/views/adoptForm.html'));
+})
+
+app.get('/dog', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/individualDog.html'));
 })
 
 // Where the routing to the other pages will happen.
