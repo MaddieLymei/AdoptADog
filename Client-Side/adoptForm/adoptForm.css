@@ -98,6 +98,7 @@
   overflow: auto;
   background-color: #ccc;
   background-color: rgba(0, 0, 0, 0.4);
+  display: none;
 }
 
 .modal {
@@ -133,7 +134,80 @@
   margin-bottom: 5%;
 }
 
-@media all and (max-width: 750px) {
+/* Slideout CSS */
+.slideout {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-left: 1px solid #056d68;
+}
+
+.slideoutHelp {
+  font-size: 16px;
+  font-weight: 500;
+  color: #056d68;
+  padding-left: 40px;
+}
+
+.slideoutHeading {
+  opacity: 75%;
+  font-size: 28px;
+  padding-left: 40px;
+  margin-top: 0;
+  width: 283px;
+}
+
+.stepsList {
+  list-style-type: none;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-bottom: 60px;
+  overflow: auto;
+}
+
+.slideoutSubheading {
+  font-size: 20px;
+  font-weight: bold;
+  color: #056d68;
+  display: block;
+  margin-bottom: 10px;
+  width: 75px;
+}
+
+.stepDescription {
+  display: block;
+  width: 283px;
+  overflow: hidden;
+}
+
+.stepsListElement {
+  margin-bottom: 17px;
+}
+
+.close-button {
+  position: absolute;
+  right: 30px;
+  top: 18px;
+  font-size: 10px;
+  margin-left: 50px;
+  border: none;
+  background: none;
+  font-size: 35px;
+  color: #c4c4c4;
+}
+
+.close-button:hover {
+  cursor: pointer;
+}
+
+@media all and (max-width: 768px) {
   .adoptionForm {
     width: 100%;
   }
