@@ -10,7 +10,7 @@
 	</head>
 	<body>
 
-		<script type="text/javascript" src="../navbar/navbar.js"></script>
+		<script type="text/javascript" src="navbar.js"></script>
 		<script>loadNavbar();</script>
 		<script type="text/javascript" src="AdoptPage.js"></script>
 
