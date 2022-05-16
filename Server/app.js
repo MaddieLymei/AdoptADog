@@ -2,14 +2,11 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-
 //Routes to other pages
-const adoptionRouter = require('./routes/adopt');
 const individualDogRouter = require('./routes/individualDog');
 
-console.log(__dirname);
 
-//Static Files for home page
+//Static Files
 app.use(express.static('public'));
 app.use('/css', express.static(path.join(__dirname, 'public/css')))
 app.use('/js', express.static(path.join(__dirname, 'public/js')))
@@ -21,9 +18,19 @@ app.get('/', (req, res) => {
     console.log('Here');
 })
 
-// Where the routing to the other pages will happen.
+app.get('/adopt', (req, res)=>{
+    console.log("Here");
+    res.sendFile(path.join(__dirname, '/views/adoptForm.html'));
+})
 
-// app.use('/adopt', adoptionRouter);
-// app.use('/dog', individualDogRouter);
+// Where the routing to the other pages will happen.
+app.use('/dog', individualDogRouter);
+
+//Incase something can not be found
+app.all('*', (req, res) => {
+    res.status(404).send('<h1> Page not found </h1>')
+})
 
 app.listen(3000);
+
+
