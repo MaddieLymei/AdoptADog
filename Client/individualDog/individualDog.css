@@ -139,7 +139,7 @@ figure {
   padding: 0%;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
-  width: 20%
+  width: 100%
 }
 
 .slider-left {
@@ -209,22 +209,6 @@ figure {
 
 .selector-buttons-4 {
   left: 75%;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0
-  }
-
-  to {
-    opacity: 1
-  }
 }
 
 @media all and (max-width: 768px) {

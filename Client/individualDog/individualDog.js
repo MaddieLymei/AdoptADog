@@ -5,6 +5,8 @@ const dogImages = document.getElementsByClassName("dog-image");
 let currentImage = 1;
 selectSlides(currentImage);
 
+setInterval("changeSlides(1)", 10000);
+
 let extraDetailsActive = false;
 const detailsButtonHandler = function (e) {
   e.preventDefault();
@@ -25,18 +27,13 @@ const detailsButtonHandler = function (e) {
 
 btnShowHideDetail.addEventListener("click", detailsButtonHandler);
 
-window.onload = function () {
-  for (i = 0; i < selectorButtons.length; i++) {
-    dogImages[i].className += " fade";
-  }
-}
-
 function selectSlides(n) {
   display(currentImage = n);
 }
 
 function changeSlides(n) {
   display(currentImage += n);
+  console.log("changed");
 }
 
 function display(n) {
