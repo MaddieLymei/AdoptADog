@@ -10,8 +10,8 @@ function loadNavbar() {
           </a>
         </header>
         <ul class='navbarList' id='navbarList'>
-          <li class='listItem'><a href='#home' class='active'>Home</a></li>
-          <li class='listItem'><a href='#news'>Adoption</a></li>
+          <li class='listItem'><a href='http://localhost:3000/' class='active'>Home</a></li>
+          <li class='listItem'><a href='http://localhost:3000/dogs'>Adoption</a></li>
         </ul>
         <nav class='phoneMenu' id='toggleMenu'>
           <nav class='menuLine'></nav>
