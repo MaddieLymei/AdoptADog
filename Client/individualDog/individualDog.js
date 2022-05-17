@@ -3,6 +3,26 @@ const extraDetails = document.querySelectorAll(".extraDetail");
 
 const dogImages = document.getElementsByClassName("dog-image");
 let currentImage = 1;
+
+document.addEventListener("DOMContentLoaded", function () {
+  let largestHeight = 0;
+  for (a = 0; a < dogImages.length; a++) {
+    console.log("Dog height: " + dogImages[a].clientHeight);
+    if (dogImages[a].clientHeight > largestHeight) {
+      largestHeight = dogImages[a].clientHeight;
+      console.log(largestHeight);
+    }
+  }
+
+  for (i = 0; i < dogImages.length; i++) {
+    if (dogImages[i].clientHeight < largestHeight) {
+      border = (largestHeight - dogImages[i].clientHeight) / 2;
+      dogImages[i].style.borderTop = border + 'px solid rgba(5, 109, 104,0.8)';
+      dogImages[i].style.borderBottom = border + 'px solid rgba(5, 109, 104,0.8)';
+    }
+  }
+});
+
 slideshow = setInterval("changeSlides(1)", 10000);
 selectSlides(currentImage);
 
@@ -36,13 +56,13 @@ function changeSlides(n) {
 
 function display(n) {
   clearInterval(slideshow);
-  slideshow = setInterval("changeSlides(1)", 10000);
   let i;
   const selectorButtons = document.getElementsByClassName("selector-buttons");
 
   if (n > dogImages.length) { currentImage = 1 }
   if (n < 1) { currentImage = dogImages.length }
   for (i = 0; i < dogImages.length; i++) {
+    console.log(dogImages[i].clientHeight);
     dogImages[i].style.opacity = "0";
   }
 
@@ -51,5 +71,6 @@ function display(n) {
   }
 
   dogImages[currentImage - 1].style.opacity = "1";
-  selectorButtons[currentImage - 1].className += " selected"
+  // selectorButtons[currentImage - 1].className += " selected"
+  slideshow = setInterval("changeSlides(1)", 10000);
 }
