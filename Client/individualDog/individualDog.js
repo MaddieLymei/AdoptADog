@@ -4,24 +4,35 @@ const extraDetails = document.querySelectorAll(".extraDetail");
 const dogImages = document.getElementsByClassName("dog-image");
 let currentImage = 1;
 
-document.addEventListener("DOMContentLoaded", function () {
-  let largestHeight = 0;
+window.addEventListener("DOMContentLoaded", addBorder);
+
+window.addEventListener("resize", addBorder);
+
+function addBorder() {
+  for (i = 0; i < dogImages.length; i++) {
+    dogImages[i].style.borderTop = "";
+    dogImages[i].style.borderBottom = "";
+  }
+
+  let largestHeight = dogImages[0].offsetHeight;
   for (a = 0; a < dogImages.length; a++) {
-    console.log("Dog height: " + dogImages[a].clientHeight);
-    if (dogImages[a].clientHeight > largestHeight) {
-      largestHeight = dogImages[a].clientHeight;
-      console.log(largestHeight);
+    if (dogImages[a].offsetHeight > largestHeight) {
+      largestHeight = dogImages[a].offsetHeight;
     }
   }
 
-  for (i = 0; i < dogImages.length; i++) {
-    if (dogImages[i].clientHeight < largestHeight) {
-      border = (largestHeight - dogImages[i].clientHeight) / 2;
-      dogImages[i].style.borderTop = border + 'px solid rgba(5, 109, 104,0.8)';
-      dogImages[i].style.borderBottom = border + 'px solid rgba(5, 109, 104,0.8)';
+  for (f = 0; f < dogImages.length; f++) {
+    var diff = Math.abs(largestHeight - dogImages[f].offsetHeight);
+    if (diff > 20) {
+      border = (largestHeight - dogImages[f].offsetHeight) / 2;
+      console.log("largest:" + largestHeight);
+      console.log("height:" + dogImages[f].offsetHeight)
+      console.log("border:" + border);
+      dogImages[f].style.borderTop = border + 'px solid rgba(5, 109, 104,0.8)';
+      dogImages[f].style.borderBottom = border + 'px solid rgba(5, 109, 104,0.8)';
     }
   }
-});
+};
 
 slideshow = setInterval("changeSlides(1)", 10000);
 selectSlides(currentImage);
@@ -57,20 +68,13 @@ function changeSlides(n) {
 function display(n) {
   clearInterval(slideshow);
   let i;
-  const selectorButtons = document.getElementsByClassName("selector-buttons");
 
   if (n > dogImages.length) { currentImage = 1 }
   if (n < 1) { currentImage = dogImages.length }
   for (i = 0; i < dogImages.length; i++) {
-    console.log(dogImages[i].clientHeight);
     dogImages[i].style.opacity = "0";
   }
 
-  for (i = 0; i < selectorButtons.length; i++) {
-    selectorButtons[i].className = selectorButtons[i].className.replace(" selected", "");
-  }
-
   dogImages[currentImage - 1].style.opacity = "1";
-  // selectorButtons[currentImage - 1].className += " selected"
   slideshow = setInterval("changeSlides(1)", 10000);
 }
