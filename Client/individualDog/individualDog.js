@@ -23,7 +23,7 @@ function addBorder() {
 
   for (f = 0; f < dogImages.length; f++) {
     var diff = Math.abs(largestHeight - dogImages[f].offsetHeight);
-    if (diff > 20) {
+    if (diff > 20 && dogImages[f].offsetHeight != 0) {
       border = (largestHeight - dogImages[f].offsetHeight) / 2;
       console.log("largest:" + largestHeight);
       console.log("height:" + dogImages[f].offsetHeight)
