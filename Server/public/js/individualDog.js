@@ -22,4 +22,8 @@ const detailsButtonHandler = function (e) {
   }
 };
 
+function adoptionClick(){
+  window.location = 'http://localhost:3000/adopt';
+}
+
 btnShowHideDetail.addEventListener("click", detailsButtonHandler);
