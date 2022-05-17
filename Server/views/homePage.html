@@ -17,8 +17,14 @@
         <h1>AdoptADog</h1>
         <h2>Where we aim to find every furry friend a new loving home.</h2>
         <p>Bringing rescuers and shelters together since 2022.</p>
-        <button type="submit" >Find your new best friend!</button>
+        <button type="submit" id="dogsAvailable">Find your new best friend!</button>
     </article>
+
+    <script type="text/javascript">
+        document.getElementById("dogsAvailable").onclick = function () {
+            location.href = "http://localhost:3000/dogs";
+        };
+    </script>
     
 </body>
 </html>

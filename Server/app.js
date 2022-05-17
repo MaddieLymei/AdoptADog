@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+
 //Routes to other pages
 const individualDogRouter = require('./routes/individualDog');
 
@@ -22,12 +23,16 @@ app.get('/adopt', (req, res)=>{
     res.sendFile(path.join(__dirname, '/views/adoptForm.html'));
 })
 
+app.get('/dogs', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/adoptPage.html'))
+})
+
 app.get('/dog/:id', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/individualDog.html'));
 })
 
 // Where the routing to the other pages will happen.
-app.use('/dog', individualDogRouter);
+// app.use('/dog', individualDogRouter);
 
 //Incase something can not be found
 app.all('*', (req, res) => {
