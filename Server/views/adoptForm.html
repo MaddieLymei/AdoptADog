@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="/css/adoptForm.css" />
   </head>
   <body>
-    
     <script type="text/javascript" src="/js/navbar.js"></script>
 
     <script>
@@ -18,7 +17,9 @@
     <main class="mainBody">
       <form action="" class="adoptionForm">
         <header>Take the first step to take your fluffy friend home!</header>
-        <button class="sliderLink">What is required of me?</button><br /><br />
+        <button class="sliderLink" id="openSlideoutButton">
+          What is required of me?</button
+        ><br /><br />
         <label for="inputFirstName">FIRST NAME *</label><br />
         <input
           type="text"
@@ -50,8 +51,53 @@
         ></textarea
         ><br /><br />
         <button class="backButton" onclick="history.back()">Back</button>
-        <button class="submitButton">Contact me</button>
+        <button class="submitButton" id="contactMeButton">Contact me</button>
       </form>
+
+      <aside class="slideout" id="slideoutID">
+        <button class="close-button" id="closeSlideoutButton">&times;</button>
+        <header class="slideoutHeader">
+          <span class="slideoutHelp">Help</span>
+          <h1 class="slideoutHeading">How do I take Jimbo home?</h1>
+        </header>
+        <ul class="stepsList">
+          <li class="stepsListElement">
+            <span class="slideoutSubheading">Step 1:</span>
+            <span class="stepDescription"
+              >Male Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </span>
+          </li>
+          <li class="stepsListElement">
+            <span class="slideoutSubheading">Step 2:</span>
+            <span class="stepDescription"
+              >Male Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </span>
+          </li>
+          <li class="stepsListElement">
+            <span class="slideoutSubheading">Step 3:</span>
+            <span class="stepDescription"
+              >Male Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </span>
+          </li>
+          <li class="stepsListElement">
+            <span class="slideoutSubheading">Step 4:</span>
+            <span class="stepDescription"
+              >Male Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </span>
+          </li>
+          <li class="stepsListElement">
+            <span class="slideoutSubheading">Step 5:</span>
+            <span class="stepDescription"
+              >Male Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </span>
+          </li>
+        </ul>
+      </aside>
 
       <dialog class="modalContainer" id="successModal">
         <article class="modal">
