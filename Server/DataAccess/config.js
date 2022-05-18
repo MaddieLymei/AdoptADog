@@ -1,10 +1,11 @@
 const mysql = require('mysql');
 
 const db = mysql.createConnection({
-    host: 'adoptdog-instance-1.cmawnh3futge.us-east-1.rds.amazonaws.com',
+    host: "database-1.cluster-cdupzgygcurq.us-east-1.rds.amazonaws.com",
+    port:"3306",
     user: 'admin',
-    password: 'germandog',
-    database: 'AdoptAdogDB'
+    password: 'AdoptADog',
+    database: 'adoptADog'
 });
 
 // db.connect(function(err) {
@@ -50,7 +51,7 @@ db.connect(err=>{
         console.log("Table Dog created");
     });
 
-    var sqlCreatePicture = "CREATE TABLE IF NOT EXISTS Picture (Picture_ID INT PRIMARY KEY AUTO_INCREMENT, Microchip_ID NVARCHAR(15) NOT NULL, Picture_Path VARBINARY(65535) NOT NULL, FOREIGN KEY (Microchip_ID) REFERENCES Dog(Microchip_ID) ON UPDATE CASCADE ON DELETE CASCADE)";
+    var sqlCreatePicture = "CREATE TABLE IF NOT EXISTS Picture (Picture_ID INT PRIMARY KEY AUTO_INCREMENT, Microchip_ID NVARCHAR(15) NOT NULL, Picture_Path VARBINARY(42000) NOT NULL, FOREIGN KEY (Microchip_ID) REFERENCES Dog(Microchip_ID) ON UPDATE CASCADE ON DELETE CASCADE)";
     db.query(sqlCreatePicture, function (err, result) {
         if (err) throw err;
         console.log("Table Picture created");
@@ -87,7 +88,7 @@ db.connect(err=>{
         console.log("Recorded inserted into Size");
     });
 
-    var sqlInsertDog = "INSERT IGNORE INTO DOG(Microchip_ID, Size_ID, Shelter_ID, Dog_Name, Dog_Description, Sex, Age, Special_Needs, Favourite_Treat, Favourite_Activity) VALUES(123456789123456, 3, 1, 'Lucky', 'Found in a dumpster with over 100 ticks on him, and yet he is still alive! How.. lucky? ;)', 'Male', 5, 'Lots of physical activity', 'Training treat', 'Going to the dog park'), (123556789123456, 5, 1, 'Storm', 'Princess that family moved over seas, expects the best and only the best', 'Female', 12, 'Personal Couch','Night night treaty', 'Sleeping on her couch')";
+    var sqlInsertDog = "INSERT IGNORE INTO Dog(Microchip_ID, Size_ID, Shelter_ID, Dog_Name, Dog_Description, Sex, Age, Special_Needs, Favourite_Treat, Favourite_Activity) VALUES(123456789123456, 3, 1, 'Lucky', 'Found in a dumpster with over 100 ticks on him, and yet he is still alive! How.. lucky? ;)', 'Male', 5, 'Lots of physical activity', 'Training treat', 'Going to the dog park'), (123556789123456, 5, 1, 'Storm', 'Princess that family moved over seas, expects the best and only the best', 'Female', 12, 'Personal Couch','Night night treaty', 'Sleeping on her couch')";
     db.query(sqlInsertDog, function (err, result) {
         if (err) throw err;
         console.log("Recorded inserted into Dog");
