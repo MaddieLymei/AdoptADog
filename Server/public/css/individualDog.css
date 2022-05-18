@@ -192,8 +192,8 @@ figure {
   }
 
   figure {
-    width: 50%;
-    margin-left: 25%;
+    width: 90%;
+    margin-left: 5%;
   }
 
   .adoptAndEnquiries {
@@ -220,8 +220,8 @@ figure {
     width: 100%;
   }
 
-  .slider-left {
-    font-size: 50%;
+  article {
+    width: 150%;
   }
 }
 
@@ -232,4 +232,15 @@ figure {
     margin-top: 20px;
     margin-bottom: 20px;
   }
+
+  .slider-left {
+    height: 40%;
+    width: 40%;
+
+  }
+
+  .slider-right {
+    left: 50%;
+  }
+
 }

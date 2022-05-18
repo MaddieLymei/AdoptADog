@@ -3,7 +3,7 @@ function loadNavbar() {
     `<nav class='navbar'>
         <header class='logoContainer'>
           <a href='#home'>
-            <img class='websiteIcon' src='../public/images/dog.png' alt='logo'>
+            <img class='websiteIcon' src='/images/dog.png' alt='logo'>
           </a>
           <a class='logo' href='#home'>
             AdoptADog
