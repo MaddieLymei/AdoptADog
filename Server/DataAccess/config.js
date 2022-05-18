@@ -18,7 +18,6 @@ const db = mysql.createConnection({
 //     });
 //   });
 
-
 db.connect(err=>{
     if(err){
         console.log(err.message);
