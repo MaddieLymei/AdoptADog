@@ -59,8 +59,8 @@ function addBorder() {
         console.log("largest:" + largestHeight);
         console.log("height:" + dogImages[f].offsetHeight)
         console.log("border:" + border);
-        dogImages[f].style.borderTop = border + 'px solid rgba(5, 109, 104,0.8)';
-        dogImages[f].style.borderBottom = border + 'px solid rgba(5, 109, 104,0.8)';
+        dogImages[f].style.borderTop = border + 'px solid rgba(255, 255, 255,0.8)';
+        dogImages[f].style.borderBottom = border + 'px solid rgba(255, 255, 255,0.8)';
       }
     }
   }
