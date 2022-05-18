@@ -4,6 +4,10 @@ const app = express();
 const path = require('path');
 const mysql = require('mysql');
 const morgan = require('morgan');
+const debug = require('debug')('app');
+const chalk =  require('chalk'); //colours for console mssgs
+
+const PORT = process.env.PORT || 3000;
 
 const connection = mysql.createConnection({
     host: 'adoptdog-instance-1.cmawnh3futge.us-east-1.rds.amazonaws.com',
@@ -26,6 +30,8 @@ connection.end((error) => {
 const individualDogRouter = require('./routes/individualDog');
 const breed = require('./routes/breed');
 
+//console
+app.use(morgan('tiny'));
 
 //Static Files
 app.use(express.static('public'));
@@ -59,6 +65,8 @@ app.all('*', (req, res) => {
     res.status(404).send('<h1> Page not found </h1>')
 })
 
-app.listen(3000);
+app.listen(PORT, ()=>{
+    debug(`Listening on port ${chalk.green(PORT)}`);
+});
 
 
