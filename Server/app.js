@@ -2,9 +2,29 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const mysql = require('mysql');
+const morgan = require('morgan');
+
+const connection = mysql.createConnection({
+    host: 'adoptdog-instance-1.cmawnh3futge.us-east-1.rds.amazonaws.com',
+    user: 'admin',
+    password: 'germandog',
+    database: 'AdoptAdogDB'
+});
+
+connection.connect((error) => {
+        if(error){
+            console.log('Error connecting to db');
+            return;
+        }
+        console.log('DB Connection success');
+});
+connection.end((error) => {
+});
 
 //Routes to other pages
 const individualDogRouter = require('./routes/individualDog');
+const breed = require('./routes/breed');
 
 
 //Static Files
