@@ -39,7 +39,6 @@ window.onload = addBorder;
 window.addEventListener("resize", addBorder);
 
 function addBorder() {
-  console.log("add border happened");
   if (dogImages.length != 1) {
     for (i = 0; i < dogImages.length; i++) {
       dogImages[i].style.borderTop = "";
@@ -57,9 +56,6 @@ function addBorder() {
       var diff = Math.abs(largestHeight - dogImages[f].offsetHeight);
       if (diff > 20 && dogImages[f].offsetHeight != 0) {
         border = (largestHeight - dogImages[f].offsetHeight) / 2;
-        console.log("largest:" + largestHeight);
-        console.log("height:" + dogImages[f].offsetHeight)
-        console.log("border:" + border);
         dogImages[f].style.borderTop = border + 'px solid rgba(255, 255, 255,0.8)';
         dogImages[f].style.borderBottom = border + 'px solid rgba(255, 255, 255,0.8)';
       }
