@@ -2,7 +2,6 @@ const btnShowHideDetail = document.getElementById("hideShowButton");
 const extraDetails = document.querySelectorAll(".extraDetail");
 
 // Get dog name from DB.
-// console.log("How do I take {dog_name} home?".replace("{dog_name}", "Jimbo"));
 
 const dogImages = document.getElementsByClassName("dog-image");
 const sliderButtons = document.getElementsByClassName("slider-left");
@@ -31,19 +30,19 @@ function addBorder() {
       if (diff > 20 && dogImages[f].offsetHeight != 0) {
         border = (largestHeight - dogImages[f].offsetHeight) / 2;
         console.log("largest:" + largestHeight);
-        console.log("height:" + dogImages[f].offsetHeight)
+        console.log("height:" + dogImages[f].offsetHeight);
         console.log("border:" + border);
-        dogImages[f].style.borderTop = border + 'px solid rgba(5, 109, 104,0.8)';
-        dogImages[f].style.borderBottom = border + 'px solid rgba(5, 109, 104,0.8)';
+        dogImages[f].style.borderTop =
+          border + "px solid rgba(5, 109, 104,0.8)";
+        dogImages[f].style.borderBottom =
+          border + "px solid rgba(5, 109, 104,0.8)";
       }
     }
-  }
-  else {
+  } else {
     sliderButtons[0].remove();
     sliderButtons[0].remove();
   }
-
-};
+}
 
 slideshow = setInterval("changeSlides(1)", 10000);
 selectSlides(currentImage);
@@ -69,19 +68,23 @@ const detailsButtonHandler = function (e) {
 btnShowHideDetail.addEventListener("click", detailsButtonHandler);
 
 function selectSlides(n) {
-  display(currentImage = n);
+  display((currentImage = n));
 }
 
 function changeSlides(n) {
-  display(currentImage += n);
+  display((currentImage += n));
 }
 
 function display(n) {
   clearInterval(slideshow);
   let i;
 
-  if (n > dogImages.length) { currentImage = 1 }
-  if (n < 1) { currentImage = dogImages.length }
+  if (n > dogImages.length) {
+    currentImage = 1;
+  }
+  if (n < 1) {
+    currentImage = dogImages.length;
+  }
   for (i = 0; i < dogImages.length; i++) {
     dogImages[i].style.opacity = "0";
   }
