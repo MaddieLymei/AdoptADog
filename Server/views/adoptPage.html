@@ -22,9 +22,9 @@
 
 				  <section class="columnCategories">
 					<label for="chooseSize">Size</label><br />
-					<select name="size" class="sizeDropdown">
+					<select name="size" class="sizeDropdown" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
 						<option value="0" selected="selected">Select size</option>
-						<option value="1">Small</option>
+						<option value="http://localhost:3000/dogs/breed">Small</option>
 						<option value="2" >Medium</option>
 						<option value="3" >X-Large</option>
 						<option value="4" >XX-Large</option>
@@ -34,8 +34,8 @@
 				  <section class="columnCategories">
 					<label for="chooseBreed">Breed</label><br />
 					<select name="breed" class="breedDropdown">
-						<option value="0" selected="selected">Select breed</option>
-						<option value="1">Lambrador</option>
+						<option value="" selected="selected">Select breed</option>
+						<option value="1" onclick="getBreeds()">Lambrador </option>
 						<option value="2" >German Sherpherd</option>
 						<option value="3" >Great Dane</option>
 						<option value="4" >PitBull</option>
@@ -43,7 +43,6 @@
 						<option value="6">Beagle</option>
 						<option value="7">Africanis</option>
 						<option value="8">Unknown</option>
-
 					</select>
 				  </section>
 				</section>
@@ -54,14 +53,12 @@
 					<section class="card">
 					  <img src="/images/Jimbo.jpg" alt="Jimbo" style="width:100%">
 					  <section class="dogInfo">
-						<h3 for="dogName">Jimbo</h3>
-						<p>Labrador, <br> 12 years old</p>
+						<h3 for="dogName"> Lorry</h3>
+						<p>{{}}, <br> 12 years old</p>
 						  <button type = "button" class ="moreAboutDog" onclick="redirectToAdopt()">→ Find out more about me</button>
 					  </section>
 					</section>
 				  </section>
-
-
 
 				  <section class="columnCards">
 					<section class="card">
