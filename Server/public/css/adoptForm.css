@@ -231,7 +231,7 @@
   }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 576px) {
   .backButton {
     height: 35px;
     font-size: 13px;
