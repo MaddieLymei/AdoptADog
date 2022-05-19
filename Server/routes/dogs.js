@@ -13,6 +13,15 @@ router
 })
 
 router
+.route("/display")
+.get((req, res)=>{
+    db.query("SELECT * FROM Dog", (error, result) => {
+        if (error) throw error;
+        res.send(result);
+    })
+})
+
+router
 .route("/profilePics")
 //get profile pics
 .get((req, res)=>{
@@ -44,6 +53,7 @@ router
         res.send(result);
     })
 })
+
 
 
 module.exports = router;
