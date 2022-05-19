@@ -7,14 +7,25 @@
     <title>Individual Dog Page</title>
     <link rel="stylesheet" href="/css/individualDog.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/s3Queries.css" />
   </head>
   <body>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1137.0.min.js"></script>
     <script type="text/javascript" src="/js/navbar.js"></script>
+    <script src="/js/individualDog.js"></script>
+    <script src="/js/s3Queries.js"></script>
+
     <script>
       loadNavbar();
     </script>
+
     <main>
-      <img src="/Images/MicrosoftTeams-image.png" />
+      <!-- <img class="dogImage" src="/Images/MicrosoftTeams-image.png" /> -->
+      <script>
+        // loadImage("images", "MicrosoftTeams-image.png");
+        viewAlbum("images");
+      </script>
+      <div id="allPhotos"></div>
       <article>
         <header>
           <h1>Jimbo (puppy)</h1>
@@ -71,7 +82,9 @@
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
         <section class="adoptAndEnquiries">
-          <button class="adoptButton" type="submit" onclick="adoptionClick()">Adopt Me!</button>
+          <button class="adoptButton" type="submit" onclick="adoptionClick()">
+            Adopt Me!
+          </button>
           <ul class="enquiryDetailsList">
             <header><h2>Enquiries</h2></header>
             <li>Shelter name: <span>Amy’s Angels</span></li>
@@ -85,6 +98,4 @@
       </article>
     </main>
   </body>
-  <script src="/js/individualDog.js"></script>
-  <script src="/js/navbar.js"></script>
 </html>
