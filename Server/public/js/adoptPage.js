@@ -8,6 +8,3 @@ function filter() {
     window.location = "http://localhost:3000/adopt";
 }
 
-$('.breedDropdown').on('change', function(){
-    window.location = $(this).val();
-});
