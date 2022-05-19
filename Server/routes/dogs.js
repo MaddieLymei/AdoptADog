@@ -23,7 +23,6 @@ router
     })
 })
 
-
 router
 .route("/:breed")
 //display dogs per breed
