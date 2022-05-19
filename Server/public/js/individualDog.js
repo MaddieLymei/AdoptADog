@@ -34,7 +34,7 @@ const dogImages = document.getElementsByClassName("dog-image");
 const sliderButtons = document.getElementsByClassName("slider-left");
 let currentImage = 1;
 
-window.addEventListener("DOMContentLoaded", addBorder);
+window.onload = addBorder;
 
 window.addEventListener("resize", addBorder);
 
