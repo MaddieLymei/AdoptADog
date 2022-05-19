@@ -7,6 +7,7 @@ const path = require('path');
 //Routes to other pages
 const individualDogRouter = require('./routes/individualDog');
 const allDogs = require('./routes/dogs');
+//const mysql = require("mysql");
 
 //Static Files
 app.use(express.static('public'));
@@ -32,7 +33,31 @@ app.get('/dogs', (req, res) => {
 app.get('/dog/:id', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/individualDog.html'));
 })
+app.get("/filter", (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/adoptPage.html'))
+})
+app.get('/filter', ((req, res) => {
+    var mysql = require('mysql');
 
+    var db = mysql.createConnection({
+        host: "database-1.cluster-cdupzgygcurq.us-east-1.rds.amazonaws.com",
+        port:"3306",
+        user: 'admin',
+        password: 'AdoptADog',
+        database: 'adoptADog'
+    });
+    db.connect();
+    db.query('SELECT * from Breed', function(err, rows, fields) {
+        if (err) throw err;
+        var data=[];
+        for(i=0;i<rows.length;i++){
+            data.push(rows[i].name);
+        }
+     res.render('./',{data:data});
+    });
+
+}))
+'/views/adoptPage.html'
 // Where the routing to the other pages will happen.
 app.use('/dog', individualDogRouter);
 app.use('/dogs', allDogs);
