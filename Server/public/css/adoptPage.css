@@ -97,7 +97,7 @@ section.card {
   border: none;
 }
 
-.active, .moreAboutDog:hover {
+.mainBody .active, .moreAboutDog:hover {
   text-decoration: underline;
   cursor: pointer;
 
