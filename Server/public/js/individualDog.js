@@ -93,3 +93,93 @@ function display(n) {
   dogImages[currentImage - 1].style.opacity = "1";
   slideshow = setInterval("changeSlides(1)", 10000);
 }
+
+const albumBucketName = "adopt-a-dog-2022";
+
+
+
+// Initialize the Amazon Cognito credentials provider
+
+AWS.config.region = "us-east-1"; // Region
+
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+
+  IdentityPoolId: "us-east-1:3a4bd30f-7c5f-4d0f-a8bd-7937949e4715",
+
+});
+
+
+
+// Create a new service object
+
+const s3 = new AWS.S3({
+
+  apiVersion: "2006-03-01",
+
+  params: { Bucket: albumBucketName },
+
+});
+
+// 'images' is our albumName in S3 currently
+
+function loadImage(albumName, imageName) {
+
+  const albumKey = encodeURIComponent(albumName) + "/";
+
+  s3.listObjects({ Prefix: albumKey }, function (err) {
+
+    if (err) {
+
+      return alert("There was an error viewing your album: " + err.message);
+
+    }
+
+    const href = this.request.httpRequest.endpoint.href;
+
+    const bucketUrl = href + albumBucketName + "/";
+
+    const photoKey = `${albumName}/${imageName}`;
+
+    console.log("key in load image:", photoKey);
+
+    const imageURL = bucketUrl + encodeURIComponent(photoKey);
+
+    console.log(`'${imageURL}'`);
+
+    // Change image name below to microchip ID
+
+    document.getElementById(`${imageName}`).innerHTML =
+
+      '<img class="dogImage" src="' + imageURL + '"/>';
+
+  });
+
+}
+
+function returnImageURL(albumName, imageName) {
+
+  const albumKey = encodeURIComponent(albumName) + "/";
+
+  s3.listObjects({ Prefix: albumKey }, function (err) {
+
+    if (err) {
+
+      return alert("There was an error viewing your album: " + err.message);
+
+    }
+
+    const href = this.request.httpRequest.endpoint.href;
+
+    const bucketUrl = href + albumBucketName + "/";
+
+    const photoKey = `${albumName}/${imageName}`;
+
+    const imageURL = bucketUrl + encodeURIComponent(photoKey);
+
+    console.log(`'${imageURL}'`);
+
+    return imageURL;
+
+  });
+
+}
