@@ -3,10 +3,6 @@
 
 // db.connect(function(err) {
 
-
-
-    
-
 //     //getAllDogsPerBreed
 //     db.query("SELECT d.Microchip_ID, Dog_Name, Sex, Age, b.Breed_Name FROM Dog d INNER JOIN Dog_Breed ON d.Microchip_ID = Dog_Breed.Microchip_ID INNER JOIN Breed b ON Dog_Breed.Breed_ID = b.Breed_ID Where b.Breed_Name = 'Pit Bull'", function (err, result, fields) {
 //       if (err) throw err;
