@@ -3,28 +3,32 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  padding-bottom: 50px;
 }
 
 .adoptionPage {
-  width: 1000px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.adoptionPage textarea {
-  width: 99%;
-  height: 100px;
-  font-size: 15px;
-  color: #5f5a5a;
-  margin-top: 5px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  resize: none;
+.rowCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.columnCards {
+  width: 400px;
+  padding: 10px;
 }
 
 .adoptionPage form {
   font-size: 20px;
   font-weight: bold;
   color: #5f5a5a;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  resize: none;
 }
 
 .rowCategories{
@@ -45,7 +49,6 @@
   font-size: 20px;
   font-weight: bold;
   color: #5f5a5a;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   resize: none;
 }
 
@@ -55,7 +58,6 @@
   font-size: 15px;
   color: #5f5a5a;
   margin-top: 10px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   resize: none;
 }
 
@@ -65,11 +67,10 @@
   font-size: 15px;
   color: #5f5a5a;
   margin-top: 30px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   resize: none;
 }
 
-section.dogInfo {
+section .dogInfo {
   padding: 10px;
 }
 
@@ -78,15 +79,19 @@ section.dogInfo {
   font-weight: bold;
   margin-top: 10px;
   color: #1A535C;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   resize: none;
 }
 
-section.card {
-  width: 300px;
+form img {
+  border-radius: 5px;
+}
+
+section .card {
+  width: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: left;
   margin-top: 30px;
+  border-radius: 5px;
 }
 
 .moreAboutDog {
@@ -103,47 +108,12 @@ section.card {
 
 }
 
-@media screen and (max-width: 992px) {
-  .columnCards {
-    flex: 25%;
-  }
-}
-
-@media all and (max-width: 768px) {
-  .adoptionPage {
-    width: 100%;
-  }
-
+@media all and (max-width: 576px) {
   .mainBody {
-    padding-bottom: 20px;
+    padding-top: 5%;
   }
-}
 
-.rowCards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.columnCards {
-  flex: 25%;
-  padding: 10px;
-  align-items: center;
-}
-
-@media screen and (max-width: 576px) {
-  .rowCards {
-    flex-direction: column;
+  .mainBody label {
+    font-size: 15px;
   }
-}
-
-.section{
-  display: inline-block;
-  transition: .25s;
-  background-color: white;
-  width: auto;}
-
-.collapsible-content{
-  height: 0px;
-  overflow: hidden;
 }
