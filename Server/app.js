@@ -7,7 +7,7 @@ const path = require('path');
 //Routes to other pages
 const individualDogRouter = require('./routes/individualDog');
 const allDogs = require('./routes/dogs');
-//const mysql = require("mysql");
+const mysql = require("mysql");
 
 //Static Files
 app.use(express.static('public'));
