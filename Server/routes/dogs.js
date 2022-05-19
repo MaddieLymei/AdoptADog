@@ -12,6 +12,16 @@ router
     })
 })
 
+router
+.route("/profilePics")
+//get profile pics
+.get((req, res)=>{
+    db.query(`SELECT * From Picture WHERE Profile_Picture = 1`, (error, result) => {
+        if (error) throw error;
+        res.send(result);
+    })
+})
+
 
 router
 .route("/size")
@@ -22,6 +32,7 @@ router
         res.send(result);
     })
 })
+
 
 router
 .route("/:breed")
