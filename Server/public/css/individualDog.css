@@ -220,6 +220,7 @@ figure {
     width: 100%;
   }
 
+
   article {
     width: 150%;
   }
@@ -233,14 +234,7 @@ figure {
     margin-bottom: 20px;
   }
 
-  .slider-left {
-    height: 40%;
-    width: 40%;
-
-  }
-
   .slider-right {
     left: 50%;
   }
-
 }

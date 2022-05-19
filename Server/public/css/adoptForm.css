@@ -134,6 +134,10 @@
   margin-bottom: 5%;
 }
 
+.okButton:hover {
+  cursor: pointer;
+}
+
 /* Slideout CSS */
 .slideout {
   height: 100%;
@@ -207,6 +211,12 @@
   cursor: pointer;
 }
 
+.modal-close {
+  position: relative;
+  left: 70%;
+  top: 0%;
+}
+
 @media all and (max-width: 768px) {
   .adoptionForm {
     width: 100%;
@@ -252,4 +262,5 @@
     font-size: 15px;
     margin-bottom: 5%;
   }
+
 }
