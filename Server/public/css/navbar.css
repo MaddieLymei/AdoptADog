@@ -7,8 +7,6 @@
   padding-left: 5%;
 }
 
-/*would reccomend making justify-content: space-between; (looks better). Just correct the padding then*/
-
 .logo {
   color: #1a535c;
   text-decoration: none;
@@ -55,10 +53,6 @@
   margin-bottom: 4px;
 }
 
-/* .logoContainer {
-  display: flex;
-  justify-content: flex-start;
-} */
 @media all and (max-width: 500px) {
   .navbar {
     flex-direction: column;
@@ -82,7 +76,7 @@
     display: block;
     padding: 10px;
     background-color: #fff;
-    border: 1px solid #ccc;
+    margin-left: -15%;
   }
 
   .phoneMenu {
