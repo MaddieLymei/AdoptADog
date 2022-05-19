@@ -29,7 +29,7 @@
 
 .rowCategories{
 	display: flex;
-    flex-direction: row;
+  flex-direction: row;
 	align-items: center;
 }
 
@@ -97,13 +97,19 @@ section.card {
   border: none;
 }
 
-.active, .moreAboutDog:hover {
+.mainBody .active, .moreAboutDog:hover {
   text-decoration: underline;
   cursor: pointer;
 
 }
 
-@media all and (max-width: 750px) {
+@media screen and (max-width: 992px) {
+  .columnCards {
+    flex: 25%;
+  }
+}
+
+@media all and (max-width: 768px) {
   .adoptionPage {
     width: 100%;
   }
@@ -125,13 +131,7 @@ section.card {
   align-items: center;
 }
 
-@media screen and (max-width: 992px) {
-  .columnCards {
-    flex: 25%;
-  }
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 576px) {
   .rowCards {
     flex-direction: column;
   }

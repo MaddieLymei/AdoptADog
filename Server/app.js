@@ -1,11 +1,12 @@
 //Imports
+const { response } = require('express');
 const express = require('express');
 const app = express();
 const path = require('path');
 
 //Routes to other pages
 const individualDogRouter = require('./routes/individualDog');
-
+const allDogs = require('./routes/dogs');
 
 //Static Files
 app.use(express.static('public'));
@@ -15,6 +16,7 @@ app.use('/images', express.static(path.join(__dirname, 'public/images')))
 
 //Home page static file
 app.get('/', (req, res) => {
+
     res.sendFile(__dirname + '/views/homePage.html');
 })
 
@@ -32,7 +34,8 @@ app.get('/dog/:id', (req, res) => {
 })
 
 // Where the routing to the other pages will happen.
-// app.use('/dog', individualDogRouter);
+app.use('/dog', individualDogRouter);
+app.use('/dogs', allDogs);
 
 //Incase something can not be found
 app.all('*', (req, res) => {
