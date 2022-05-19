@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Home Page</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css/homePage.css">
-    <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <title>Home Page</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/css/homePage.css">
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
 </head>
+
 <body>
-    <script type="text/javascript" src="js/navbar.js"></script>
+  <script type="text/javascript" src="js/navbar.js"></script>
 
-    <nav class="navbar" id="navbar">
-        <script>loadNavbar();</script>
-    </nav>
-    
-    <img class="backgroungImgMain" src="images/MicrosoftTeams-image.png">
-    <img class="backgroungImg" src="/images/home2.jpg" alt="">
-    <article>
-        <h1>AdoptADog</h1>
-        <h2>Where we aim to find every furry friend a new loving home.</h2>
-        <p>Bringing rescuers and shelters together since 2022.</p>
-        <button type="submit" id="dogsAvailable">Find your new best friend!</button>
-    </article>
+  <nav class="navbar" id="navbar">
+    <script>loadNavbar();</script>
+  </nav>
 
-    <script type="text/javascript">
-        document.getElementById("dogsAvailable").onclick = function () {
-            location.href = "http://localhost:3000/dogs";
-        };
-    </script>
-    
+  <img class="backgroungImgMain" src="images/MicrosoftTeams-image.png">
+  <img class="backgroungImg" src="/images/home2.jpg" alt="">
+  <article>
+    <h1>AdoptADog</h1>
+    <h2>Where we aim to find every furry friend a new loving home.</h2>
+    <p>Bringing rescuers and shelters together since 2022.</p>
+    <button type="submit" id="dogsAvailable">Find your new best friend!</button>
+  </article>
+
+  <script type="text/javascript">
+    document.getElementById("dogsAvailable").onclick = function () {
+      location.href = "http://ec2-52-73-84-167.compute-1.amazonaws.com//dogs";
+    };
+  </script>
+
 </body>
+
 </html>

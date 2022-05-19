@@ -21,7 +21,7 @@ const detailsButtonHandler = function (e) {
 };
 
 function adoptionClick() {
-  window.location = "http://localhost:3000/adopt";
+  window.location = "http://ec2-52-73-84-167.compute-1.amazonaws.com/adopt";
 }
 
 btnShowHideDetail.addEventListener("click", detailsButtonHandler);
