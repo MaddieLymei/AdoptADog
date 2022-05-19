@@ -118,6 +118,72 @@ main img {
   font-weight: 300;
 }
 
+.dog-image {
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+  transition: opacity 0.8s ease-in;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+figure {
+  display: grid;
+  padding: 0%;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-right: 2%;
+  margin-left: 0;
+  grid-auto-columns: 2fr;
+  grid-auto-rows: minmax(10%, 2fr);
+  width: 100%;
+  height: 100%;
+}
+
+.slider-left {
+  position: relative;
+  grid-column: 1;
+  grid-row: 3;
+  padding: 0;
+  background-color: #cccc;
+  opacity: 0.8;
+  left: 10%;
+  height: 20%;
+  width: 20%;
+  z-index: 100;
+  font-family: boxicons;
+  font-size: 100%;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.slider-right {
+  grid-column: 3;
+  left: 65%;
+}
+
+.btn:active {
+  transition: scale 0.6s ease;
+  transform: scale(1.1);
+}
+
+.btn:hover {
+  transition: background-color 0.6s ease;
+  background-color: #ffe66d;
+  opacity: 1;
+}
+
+.btn:not(:hover) {
+  transition: scale 0.6s ease;
+}
+
+.selected {
+  scale: 1.1;
+  background-color: #ffe66d;
+}
+
 @media all and (max-width: 768px) {
   main {
     display: block;
@@ -125,12 +191,9 @@ main img {
     padding-right: 5%;
   }
 
-  main img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    width: 50%;
+  figure {
+    width: 90%;
+    margin-left: 5%;
   }
 
   .adoptAndEnquiries {
@@ -147,11 +210,31 @@ main img {
   }
 }
 
+@media all and (min-width: 769px) and (max-width: 1200px) {
+  main {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+
+  figure {
+    width: 100%;
+  }
+
+
+  article {
+    width: 150%;
+  }
+}
+
 /* Make sure to align max-width with nav bar  */
 
 @media all and (max-width: 500px) {
   main img {
     margin-top: 20px;
     margin-bottom: 20px;
+  }
+
+  .slider-right {
+    left: 50%;
   }
 }
