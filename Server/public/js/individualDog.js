@@ -39,6 +39,7 @@ window.onload = addBorder;
 window.addEventListener("resize", addBorder);
 
 function addBorder() {
+  console.log("add border happened");
   if (dogImages.length != 1) {
     for (i = 0; i < dogImages.length; i++) {
       dogImages[i].style.borderTop = "";
