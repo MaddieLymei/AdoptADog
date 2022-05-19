@@ -32,7 +32,7 @@ db.connect(err=>{
         console.log("Table Dog created");
     });
 
-    var sqlCreatePicture = "CREATE TABLE IF NOT EXISTS Picture (Picture_ID INT PRIMARY KEY AUTO_INCREMENT, Microchip_ID NVARCHAR(15) NOT NULL, Picture_Path VARBINARY(42000) NOT NULL, Profile_Picture BIT, FOREIGN KEY (Microchip_ID) REFERENCES Dog(Microchip_ID) ON UPDATE CASCADE ON DELETE CASCADE)";
+    var sqlCreatePicture = "CREATE TABLE IF NOT EXISTS Picture (Picture_ID INT PRIMARY KEY AUTO_INCREMENT, Microchip_ID NVARCHAR(15) NOT NULL, Picture_Path NVARCHAR(150) NOT NULL, Profile_Picture BIT, FOREIGN KEY (Microchip_ID) REFERENCES Dog(Microchip_ID) ON UPDATE CASCADE ON DELETE CASCADE)";
     db.query(sqlCreatePicture, function (err, result) {
         if (err) throw err;
         console.log("Table Picture created");
@@ -87,8 +87,8 @@ db.connect(err=>{
         console.log("Recorded inserted into Behaviour");
     });
 
-    var sqlInsertImages = "INSERT IGNORE INTO Picture(Picture_ID, Microchip_ID, Picture_Path, Profile_Picture) VALUES(123456789123456, 'Leiyah_1.jpg', 1), (123456789123456, 'Leiyah_2.jpg', 0), (123456789123456, 'Leiyah_3.jpg', 0), (123556789123456, 'Jimbo_1.jpg', 1), (123556789123456, 'Jimbo_2.jpg', 0), (123556789123456, 'Jimbo_3.jpg', 0)"
-    db.query(sqlInsertBehaviour, function (err, result) {
+    var sqlInsertImages = "INSERT IGNORE INTO Picture(Microchip_ID, Picture_Path, Profile_Picture) VALUES(123456789123456, 'Leiyah_1.jpg', 1), (123456789123456, 'Leiyah_2.jpg', 0), (123456789123456, 'Leiyah_3.jpg', 0), (123556789123456, 'Jimbo_1.jpg', 1), (123556789123456, 'Jimbo_2.jpg', 0), (123556789123456, 'Jimbo_3.jpg', 0)"
+    db.query(sqlInsertImages, function (err, result) {
         if (err) throw err;
         console.log("Recorded inserted into Picture");
     });
