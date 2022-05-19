@@ -22,8 +22,31 @@ function loadImage(albumName, imageName) {
     const href = this.request.httpRequest.endpoint.href;
     const bucketUrl = href + albumBucketName + "/";
     const photoKey = `${albumName}/${imageName}`;
+    console.log("key in load image:", photoKey);
     const imageURL = bucketUrl + encodeURIComponent(photoKey);
-    document.write(`<img class='dogImage' src='${imageURL}'/>`);
+    console.log(`'${imageURL}'`);
+    document.getElementById("individualPhoto").innerHTML =
+      '<img class="dogImage" src="' + imageURL + '"/>';
+  });
+}
+
+function viewAlbum(albumName) {
+  const albumKey = encodeURIComponent(albumName) + "/";
+  s3.listObjects({ Prefix: albumKey }, function (err, data) {
+    if (err) {
+      return alert("There was an error viewing your album: " + err.message);
+    }
+    // 'this' references the AWS.Request instance that represents the response
+    const href = this.request.httpRequest.endpoint.href;
+    const bucketUrl = href + albumBucketName + "/";
+    const photos = data.Contents.map(function (photo) {
+      const photoKey = photo.Key;
+      console.log("Key in album:", photoKey);
+      const imageURL = bucketUrl + encodeURIComponent(photoKey);
+      return '<img class="dogImage" src="' + imageURL + '"/>';
+    });
+    console.log(photos.join("\n"));
+    document.getElementById("allPhotos").innerHTML = photos.join("\n");
   });
 }
 
@@ -35,34 +58,5 @@ function getAlbumObjectArray(albumName) {
       return alert("There was an error viewing your album: " + err.message);
     }
     return data.Contents;
-  });
-}
-
-// Could mess around with the stuff below for adopt page
-function viewAlbum(albumName) {
-  const albumKey = encodeURIComponent(albumName) + "/";
-  s3.listObjects({ Prefix: albumKey }, function (err, data) {
-    if (err) {
-      return alert("There was an error viewing your album: " + err.message);
-    }
-    // 'this' references the AWS.Request instance that represents the response
-    const href = this.request.httpRequest.endpoint.href;
-    const bucketUrl = href + albumBucketName + "/";
-    // data.Contents.map(function (photo) {
-    //   const photoKey = photo.Key;
-    //   const imageURL = bucketUrl + encodeURIComponent(photoKey);
-    //   //   return '<img style="width:128px;height:128px;" src="' + imageURL + '"/>';
-    //   //   document.write(
-    //   //     `<img style="width:128px;height:128px;" src='${imageURL}'/>`
-    //   //   );
-    // });
-
-    const photos = data.Contents.map(function (photo) {
-      const photoKey = photo.Key;
-      const imageURL = bucketUrl + encodeURIComponent(photoKey);
-      return '<img style="width:128px;height:128px;" src="' + imageURL + '"/>';
-    });
-    console.log(photos.join("\n"));
-    document.getElementById("allPhotos").innerHTML = photos.join("\n");
   });
 }

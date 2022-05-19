@@ -7,7 +7,6 @@
     <title>Individual Dog Page</title>
     <link rel="stylesheet" href="/css/individualDog.css" />
     <link rel="stylesheet" href="/css/navbar.css" />
-    <link rel="stylesheet" href="/css/s3Queries.css" />
   </head>
   <body>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1137.0.min.js"></script>
@@ -20,12 +19,10 @@
     </script>
 
     <main>
-      <!-- <img class="dogImage" src="/Images/MicrosoftTeams-image.png" /> -->
       <script>
-        // loadImage("images", "MicrosoftTeams-image.png");
-        viewAlbum("images");
+        loadImage("images", "MicrosoftTeams-image.png");
       </script>
-      <div id="allPhotos"></div>
+      <aside class="asideImage" id="individualPhoto"></aside>
       <article>
         <header>
           <h1>Jimbo (puppy)</h1>
