@@ -31,7 +31,7 @@ const dogImages = document.getElementsByClassName("dog-image");
 const sliderButtons = document.getElementsByClassName("slider-left");
 let currentImage = 1;
 
-window.addEventListener("DOMContentLoaded", addBorder);
+window.onload = addBorder;
 
 window.addEventListener("resize", addBorder);
 
@@ -53,13 +53,8 @@ function addBorder() {
       var diff = Math.abs(largestHeight - dogImages[f].offsetHeight);
       if (diff > 20 && dogImages[f].offsetHeight != 0) {
         border = (largestHeight - dogImages[f].offsetHeight) / 2;
-        console.log("largest:" + largestHeight);
-        console.log("height:" + dogImages[f].offsetHeight);
-        console.log("border:" + border);
-        dogImages[f].style.borderTop =
-          border + "px solid rgba(255, 255, 255,0.8)";
-        dogImages[f].style.borderBottom =
-          border + "px solid rgba(255, 255, 255,0.8)";
+        dogImages[f].style.borderTop = border + 'px solid rgba(255, 255, 255,0.8)';
+        dogImages[f].style.borderBottom = border + 'px solid rgba(255, 255, 255,0.8)';
       }
     }
   } else {
