@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Individual Dog Page</title>
-    <link rel="stylesheet" href="/css/individualDog.css" />
-    <link rel="stylesheet" href="/css/navbar.css" />
-  </head>
-  <body>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1137.0.min.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Individual Dog Page</title>
+  <link rel="stylesheet" href="/css/individualDog.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <link rel="shortcut icon" href="/images/dog.ico" type="image/x-icon">
+</head>
+
+<body>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1137.0.min.js"></script>
     <script type="text/javascript" src="/js/navbar.js"></script>
     <script src="/js/individualDog.js"></script>
     <script src="/js/s3Queries.js"></script>
@@ -17,82 +20,89 @@
     <script>
       loadNavbar();
     </script>
+    <script>
+      loadImage("images", "MicrosoftTeams-image.png");
+    </script>
+  <!-- <aside class="asideImage" id="individualPhoto"></aside> -->
+  <main>
+    <figure>
+      <button class="btn slider-left" onclick="changeSlides(-1)">&#60</button>
+      <button class="btn slider-left slider-right" onclick="changeSlides(1)"">&#62</button>
+        <img src='/images/jimbo/jimbo_2.jpg' class=" dog-image">
+        <img src='/images/jimbo/jimbo_1.jpg' class=" dog-image">
+        <img src='/images/jimbo/jimbo_3.jpg' class=" dog-image">
+        <img src='/images/jimbo/jimbo_4.jpg' class=" dog-image">
+        <img src='/images/jimbo/MicrosoftTeams-image.png' class=" dog-image">
+    </figure>
+    <article>
+      <header>
+        <h1>Jimbo (puppy)</h1>
+      </header>
+      <section class="characteristicsSection">
+        <ul class="characteristicsList">
+          <li>
+            <b>Breed:</b> <span class="characteristicsContent">Labrador</span>
+          </li>
+          <li>
+            <b>Size:</b> <span class="characteristicsContent">Large</span>
+          </li>
+          <li>
+            <b>Age:</b> <span class="characteristicsContent">4 months</span>
+          </li>
+          <li>
+            <b>Sex:</b> <span class="characteristicsContent">Male</span>
+          </li>
+          <li class="extraDetail">
+            <b>Cat friendly:</b>
+            <span class="characteristicsContent">Yes</span>
+          </li>
+          <li class="extraDetail">
+            <b>Dog friendly:</b>
+            <span class="characteristicsContent">Yes</span>
+          </li>
+          <li class="extraDetail">
+            <b>Child friendly:</b>
+            <span class="characteristicsContent">Will eat your kids</span>
+          </li>
+          <li class="extraDetail">
+            <b>Adult friendly:</b>
+            <span class="characteristicsContent">Yes</span>
+          </li>
+          <li class="extraDetail">
+            <b>Sheds:</b> <span class="characteristicsContent">Yes</span>
+          </li>
+        </ul>
+        <button class="hideShowDetailsButton" id="hideShowButton" type="button">
+          More details
+        </button>
+      </section>
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <section class="adoptAndEnquiries">
+        <button class="adoptButton" type="submit">Adopt Me!</button>
+        <ul class="enquiryDetailsList">
+          <header>
+            <h2>Enquiries</h2>
+          </header>
+          <li>Shelter name: <span>Amy’s Angels</span></li>
+          <li>Contact details: <span>022 222 2222</span></li>
+          <li>
+            Location: <span>Cape Town,</span> <span>suburb,</span>
+            <span>road road</span>
+          </li>
+        </ul>
+      </section>
+    </article>
+  </main>
+</body>
+<script src="/js/individualDog.js"></script>
+<script src="/js/navbar.js"></script>
 
-    <main>
-      <script>
-        loadImage("images", "MicrosoftTeams-image.png");
-      </script>
-      <aside class="asideImage" id="individualPhoto"></aside>
-      <article>
-        <header>
-          <h1>Jimbo (puppy)</h1>
-        </header>
-        <section class="characteristicsSection">
-          <ul class="characteristicsList">
-            <li>
-              <b>Breed:</b> <span class="characteristicsContent">Labrador</span>
-            </li>
-            <li>
-              <b>Size:</b> <span class="characteristicsContent">Large</span>
-            </li>
-            <li>
-              <b>Age:</b> <span class="characteristicsContent">4 months</span>
-            </li>
-            <li>
-              <b>Sex:</b> <span class="characteristicsContent">Male</span>
-            </li>
-            <li class="extraDetail">
-              <b>Cat friendly:</b>
-              <span class="characteristicsContent">Yes</span>
-            </li>
-            <li class="extraDetail">
-              <b>Dog friendly:</b>
-              <span class="characteristicsContent">Yes</span>
-            </li>
-            <li class="extraDetail">
-              <b>Child friendly:</b>
-              <span class="characteristicsContent">Will eat your kids</span>
-            </li>
-            <li class="extraDetail">
-              <b>Adult friendly:</b>
-              <span class="characteristicsContent">Yes</span>
-            </li>
-            <li class="extraDetail">
-              <b>Sheds:</b> <span class="characteristicsContent">Yes</span>
-            </li>
-          </ul>
-          <button
-            class="hideShowDetailsButton"
-            id="hideShowButton"
-            type="button"
-          >
-            More details
-          </button>
-        </section>
-        <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <section class="adoptAndEnquiries">
-          <button class="adoptButton" type="submit" onclick="adoptionClick()">
-            Adopt Me!
-          </button>
-          <ul class="enquiryDetailsList">
-            <header><h2>Enquiries</h2></header>
-            <li>Shelter name: <span>Amy’s Angels</span></li>
-            <li>Contact details: <span>022 222 2222</span></li>
-            <li>
-              Location: <span>Cape Town,</span> <span>suburb,</span>
-              <span>road road</span>
-            </li>
-          </ul>
-        </section>
-      </article>
-    </main>
-  </body>
 </html>

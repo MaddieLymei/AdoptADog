@@ -25,10 +25,13 @@ function loadImage(albumName, imageName) {
     console.log("key in load image:", photoKey);
     const imageURL = bucketUrl + encodeURIComponent(photoKey);
     console.log(`'${imageURL}'`);
-    document.getElementById("individualPhoto").innerHTML =
+    // Change image name below to microchip ID
+    document.getElementById(`${imageName}`).innerHTML =
       '<img class="dogImage" src="' + imageURL + '"/>';
   });
 }
+
+function loadMultipleImages([imageNames]) {}
 
 function viewAlbum(albumName) {
   const albumKey = encodeURIComponent(albumName) + "/";
@@ -41,7 +44,6 @@ function viewAlbum(albumName) {
     const bucketUrl = href + albumBucketName + "/";
     const photos = data.Contents.map(function (photo) {
       const photoKey = photo.Key;
-      console.log("Key in album:", photoKey);
       const imageURL = bucketUrl + encodeURIComponent(photoKey);
       return '<img class="dogImage" src="' + imageURL + '"/>';
     });
