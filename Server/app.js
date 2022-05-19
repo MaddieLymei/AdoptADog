@@ -2,13 +2,20 @@
 const { response } = require('express');
 const express = require('express');
 const app = express();
+const chalk =  require('chalk'); //colours for mssgs
+const debug = require('debug')('app');
+const morgan = require('morgan');
 const path = require('path');
+
+
+const PORT = process.env.PORT || 80;
 
 //Routes to other pages
 const individualDogRouter = require('./routes/individualDog');
 const allDogs = require('./routes/dogs');
 const mysql = require("mysql");
 
+app.use(morgan('tiny'));
 //Static Files
 app.use(express.static('public'));
 app.use('/css', express.static(path.join(__dirname, 'public/css')))
@@ -43,6 +50,8 @@ app.all('*', (req, res) => {
     res.status(404).send('<h1> Page not found </h1>')
 })
 
-app.listen(3000);
+app.listen(PORT, ()=>{
+    debug(`Listening on port ${chalk.green(PORT)}`);
+});
 
 
